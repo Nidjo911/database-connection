@@ -20,7 +20,10 @@ const app = express();
 app.use(express.json())
 
 // use cors
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
+}));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));

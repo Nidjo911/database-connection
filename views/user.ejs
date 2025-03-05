@@ -1,9 +1,9 @@
 <%- include('./partials/header') %>
     <h1>User section</h1>
 
-    <form action="/kreiraj" method="POST">
+    <form action="/user" method="POST">
         <div class="form-group">
-            <label for="name">Name:</label>
+            <label for="user">Name:</label>
             <input type="text" id="name" name="name">
         </div>
 
@@ -22,9 +22,6 @@
                     <span>
                         <%= user.name %>: <%= user.email %>
                     </span>
-<!--                     <button
-                        onclick="editItem('<%= item.id %>', '<%= item.name %>', '<%= item.description %>')">Edit</button>
-                    <button onclick="deleteItem('<%= item.id %>')">Delete</button> -->
                 </li>
                 <% }); %>
         </ul>
