@@ -5,10 +5,19 @@ exports.getIndex = (req, res) => {
     res.render('index');
 };
 
-exports.getUserPage = (req,res) => {
-    console.log("Rendered user page!");
-    res.render('user');
+
+exports.getUserPage = async (req,res) => {
+    const { data, error } = await supabase
+    .from('users')
+    .select('*')
+    .order('id', { ascending: true }); 
+if (error) {
+    console.error(error);
+    res.redirect('/user?error=true');
+} else {
+    res.render('user', { users: data });
 }
+};
 
 
 exports.createItem = async (req, res) => {

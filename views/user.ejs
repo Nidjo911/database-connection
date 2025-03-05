@@ -1,18 +1,33 @@
 <%- include('./partials/header') %>
-<h1>User section</h1>
+    <h1>User section</h1>
 
-<form action="/kreiraj" method="POST">
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
-    </div>
+    <form action="/kreiraj" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
 
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-    </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
 
-    <button type="submit">Create User</button>
-</form>
+        <button type="submit">Create User</button>
+    </form>
 
-<%- include('./partials/footer') %>
+    <section>
+        <ul id="itemList">
+            <% users.forEach((user)=> { %>
+                <li>
+                    <span>
+                        <%= user.name %>: <%= user.email %>
+                    </span>
+<!--                     <button
+                        onclick="editItem('<%= item.id %>', '<%= item.name %>', '<%= item.description %>')">Edit</button>
+                    <button onclick="deleteItem('<%= item.id %>')">Delete</button> -->
+                </li>
+                <% }); %>
+        </ul>
+    </section>
+
+    <%- include('./partials/footer') %>
