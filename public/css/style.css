@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.data-section{
+    background-color: beige;
+    width: 300px;
+    height: fit-content;
+    padding: 10px;
+    margin: 10px;
+}
+*{
+    background-color: pink;
+}
+.buttons-section{
+    background-color: rgb(240, 240, 196);
+    width: 300px;
+    height: fit-content;
+    padding: 10px;
+    margin: 10px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
